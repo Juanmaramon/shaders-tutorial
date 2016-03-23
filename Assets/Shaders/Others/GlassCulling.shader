@@ -1,6 +1,8 @@
 ﻿Shader ".ShaderLearning/Others/GlassCulling" 
 {
 
+	// Fixed function shader to render glass backfaces
+
     Properties 
     {
         _Color ("Main Color", Color) = (1,1,1,0)
@@ -25,7 +27,7 @@
         }
 
         Lighting On
-        SeparateSpecular Off
+        SeparateSpecular On
 
         // Set up alpha blending
         Blend SrcAlpha OneMinusSrcAlpha
@@ -52,6 +54,8 @@
                 Combine Primary * Texture
             }
         }
+
+
     }
 
     Fallback "Transparent/VertexLit"

@@ -1,7 +1,7 @@
 # shaders-tutorial
 Unity shader tutorial
 
-Zombie model from asset store:
+Zombie model from asset store: http://u3d.as/bFW
 
 References:
 

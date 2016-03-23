@@ -9,7 +9,8 @@
 	}
 
 	// List of subshaders, Unity will pick the first one that Graphics Card support 
-	SubShader{
+	SubShader
+	{
 		// Several pass can be done
 		Pass
 		{

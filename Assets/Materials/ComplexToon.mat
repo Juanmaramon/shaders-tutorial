@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: SimpleTexturing
-  m_Shader: {fileID: 4800000, guid: d4f2182dbdd84394896775f27818131c, type: 3}
+  m_Name: ComplexToon
+  m_Shader: {fileID: 4800000, guid: 5c2e93f865300f94187728f7e7fdc3f3, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: 2000

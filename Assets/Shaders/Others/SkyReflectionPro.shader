@@ -3,17 +3,17 @@
 	Properties{
 		// three textures we'll use in the material
 		_MainTex("Base texture", 2D) = "white" {}
-	_OcclusionMap("Occlusion", 2D) = "white" {}
-	_BumpMap("Normal Map", 2D) = "bump" {}
+		_OcclusionMap("Occlusion", 2D) = "white" {}
+		_BumpMap("Normal Map", 2D) = "bump" {}
 	}
 		SubShader
 	{
 		Pass
 	{
 		CGPROGRAM
-#pragma vertex vert
-#pragma fragment frag
-#include "UnityCG.cginc"
+		#pragma vertex vert
+		#pragma fragment frag
+		#include "UnityCG.cginc"
 
 		// exactly the same as in previous shader
 	struct v2f {

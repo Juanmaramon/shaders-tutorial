@@ -1,11 +1,12 @@
-﻿Shader ".ShaderLearning/3-SimpleDiffuseLightning"
+﻿Shader ".ShaderLearning/Others/VertexModification"
 {
 	// Simple diffuse shader
 
 	// Properties (material properties)
 	Properties{
 		_Color("Main Color", Color) = (1,1,1,1)
-		[NoScaleOffset] _MainTex("Main Texture", 2D) = "grey" {}
+		_MainTex("Main Texture", 2D) = "grey" {}
+		_Amount("Height Adjustment", Range(0, 0.1)) = 0.0
 	}
 
 	// List of subshaders, Unity will pick the first one that Graphics Card support 
@@ -45,12 +46,16 @@
 			sampler2D _MainTex;
 			// Color from first light on scene
 			float4 _LightColor0;
+			// Height displacement 
+			float _Amount;
 
 			// Vertex shader 
 			// Convert object space to world space
 			v2f vert(appdata IN)
 			{
 				v2f OUT;
+				// Apply height displacement on the normal vector direction
+				IN.vertex.xyz += IN.normal * _Amount;
 				OUT.pos = mul(UNITY_MATRIX_MVP, IN.vertex);
 				// Normal from object space to world space
 				OUT.normal = mul(float4(IN.normal, 0.0), _Object2World).xyz;
@@ -80,7 +85,7 @@
 	}
 
 	// Fallback shader if no one subshader is supported by graphics cards
-//	FallBack "Diffuse"
+	FallBack "Diffuse"
 
 	// Custom editor things...(less used)
 }
